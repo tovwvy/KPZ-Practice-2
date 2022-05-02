@@ -1,0 +1,11 @@
+    import platform
+
+
+def get_os():
+    os = platform.system()
+    if os == "Windows":
+        return "Mac"
+    elif os == "linux":
+        pass
+    else:
+        return 
