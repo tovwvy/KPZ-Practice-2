@@ -21,7 +21,7 @@ def get_text_info(filepath):
 def download_csv(urlpath):
     with requests.Session() as s:
         download = s.get(urlpath)
-        open('for_data/csv_file.csv', 'wb').write(download.content)
+        open('source_data/csv_file.csv', 'wb').write(download.content)
         print("Downloaded completed!\n")
 
 
