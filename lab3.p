@@ -37,9 +37,9 @@ def palindrom(input):
 
 def get_os():
     os = platform.system()
-    if os == "Darwin":
+    if os == "Windows":
         return "Mac"
-    elif os == "Java":
+    elif os == "linux":
         pass
     else:
         return 
