@@ -1,16 +1,31 @@
-import re
+import platform
+
+def palindrome(text):
+  
+
+    word_list = []
+    temp = ''
+    for i, v in enumerate(text):
+        if v.isalpha():  
+            temp += v
+            if i == len(text) - 1 and temp.isalpha():
+                word_list.append(temp)
+        else:  
+            word_list.append(temp)
+            temp = ''
+
+  
+
+    pal_words = []
+    for i in word_list:
+        i = i.lower()
+        reversed_word = i[::-1] 
+        if len(i) < 3:
+            continue
+        if reversed_word == i:  
+            pal_words.append(i)
+    return pal_words
 
 
-def palindrom(input):
-    if not isinstance(input, str):
-        raise Exception("The argument must contain the string ")
-    if len(input) < 2:
-        raise Exception("The argument must contain a string of more than 2 characters")
-    result = []
-    array = re.findall(r"[\w']+", input)
-    for value in array:
-        if len(value) > 1:
-            if len(value) > 1:
-                if value == value[::-1]:
-                    result.append(value)
-    return 
+palindrome("Lol  kek  asdd  fdf")
+
