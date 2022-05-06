@@ -1,5 +1,3 @@
-import platform
-
 def palindrome(text):
   
 
