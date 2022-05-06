@@ -1,14 +1,18 @@
-import socket
-
-
 def validate_ip(ip_address):
-    if len(ip_address) < 7:
-        raise Exception("The argument must contain a string of more than 7 characters")
-    if not isinstance(ip_address, str):
-        raise Exception("The argument must contain the string ")
-
+    ip_validate = False
     try:
-        socket.inet_aton(ip_address)
-        return True
-    except:
-        return False
+        ip = ipaddress.ip_address(ip_address)
+        ip_validate = True
+    except ValueError:
+        ip_validate = False
+
+    return ip_validate
+
+
+validate_ip("192.172.2.43")
+validate_ip("192.172.2.335")
+
+
+def get_os():
+    return platform.system()
+get_os()
